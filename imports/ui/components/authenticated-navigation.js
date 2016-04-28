@@ -70,9 +70,19 @@ export const AuthenticatedNavigation = () => (
       <LinkContainer to="/fareList">
         <NavItem eventKey={ 3 } href="/fareList">Fare</NavItem>
       </LinkContainer>
-      <LinkContainer to="/Reconciliation">
-        <NavItem eventKey={ 3 } href="/Reconciliation">Reconciliation</NavItem>
-      </LinkContainer> 
+
+      <NavDropdown eventKey={4} title="Reconciliation" id="nav-dropdown">
+        <LinkContainer to="/importSettlement">
+          <NavItem eventKey={ 3 } href="/importSettlement">Import CSV</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/reconcile">
+          <NavItem eventKey={ 3 } href="/reconcile">Reconcile</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/settlement">
+          <NavItem eventKey={ 3 } href="/settlement">Settlement</NavItem>
+        </LinkContainer>
+      </NavDropdown> 
+
       <LinkContainer to="/userManagement">
         <NavItem eventKey={ 3 } href="/userManagement">User Management</NavItem>
       </LinkContainer> 
