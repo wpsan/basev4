@@ -45,7 +45,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { App } from '../../ui/layouts/app';
 import { Documents } from '../../ui/pages/documents';
 //====== NAVBAR
-import { BookingList } from '../../ui/pages/bookingList';
+import { Booking } from '../../ui/pages/bookingList';
 import { HistoryList } from '../../ui/pages/historyList';
 import { CityList } from '../../ui/pages/cityList';
 import { HelipadList } from '../../ui/pages/helipadList';
@@ -82,7 +82,7 @@ Meteor.startup(() => {
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } onEnter={ requireAuth } />
         <Route name="documents" path="/documents" component={ Documents } onEnter={ requireAuth } />
-        <Route name="BookingList" path="/bookingList" component={ BookingList } onEnter={ requireAuth } />
+        <Route name="Booking" path="/bookingList" component={ Booking } onEnter={ requireAuth } />
         <Route name="HistoryList" path="/historyList" component={ HistoryList } onEnter={ requireAuth } />
         <Route name="CityList" path="/cityList" component={ CityList } onEnter={ requireAuth } />
         <Route name="HelipadList" path="/helipadList" component={ HelipadList } onEnter={ requireAuth } />
