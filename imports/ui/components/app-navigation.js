@@ -10,7 +10,8 @@ export class AppNavigation extends React.Component {
   }
 
   render() {
-    return <Navbar>
+    return <Navbar inverse>
+     <div className="container-fluid"> 
       <Navbar.Header>
         <Navbar.Brand>
           <Link to="/">Whitesky Helicity</Link>
@@ -20,6 +21,7 @@ export class AppNavigation extends React.Component {
       <Navbar.Collapse>
         { this.renderNavigation(this.props.hasUser) }
       </Navbar.Collapse>
+      </div>
     </Navbar>;
   }
 }
