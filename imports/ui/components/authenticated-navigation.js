@@ -31,13 +31,15 @@ export const AuthenticatedNavigation = () => (
   </div>
 );
 */
-
+// <LinkContainer to="/documents">
+//         <NavItem eventKey={ 2 } href="/documents">Documents</NavItem>
+//       </LinkContainer>
 import React from 'react';
 import { browserHistory } from 'react-router';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
+
 
 const userName = () => {
   const user = Meteor.user();
@@ -45,6 +47,10 @@ const userName = () => {
   return user ? `${name.first} ${name.last}` : '';
 };
 
+const handleLogout = () => { 
+  Bert.alert('Thanks You '+userName ()+' !', 'success');
+  Meteor.logout(() => browserHistory.push('/login'));
+};
 
 export const AuthenticatedNavigation = () => (
   <div>
@@ -52,9 +58,7 @@ export const AuthenticatedNavigation = () => (
       <IndexLinkContainer to="/">
         <NavItem eventKey={ 1 } href="/">Index</NavItem>
       </IndexLinkContainer>
-      <LinkContainer to="/documents">
-        <NavItem eventKey={ 2 } href="/documents">Documents</NavItem>
-      </LinkContainer>
+      
       <LinkContainer to="/bookingList">
         <NavItem eventKey={ 3 } href="/bookingList">Booking</NavItem>
       </LinkContainer>
@@ -89,10 +93,13 @@ export const AuthenticatedNavigation = () => (
       <LinkContainer to="/memberList">
         <NavItem eventKey={ 10 } href="/memberList">Member List</NavItem>
       </LinkContainer>     
+      <LinkContainer to="/ticketSupport">
+        <NavItem eventKey={ 11 } href="/ticketSupport">Ticket Support</NavItem>
+      </LinkContainer> 
     </Nav>
     <Nav pullRight>
-      <NavDropdown eventKey={ 11 } title={ userName() } id="basic-nav-dropdown">
-        <MenuItem eventKey={ 11.1 } onClick={ handleLogout }>Logout</MenuItem>
+      <NavDropdown eventKey={ 12 } title={ userName() } id="basic-nav-dropdown">
+        <MenuItem eventKey={ 12.1 } onClick={ handleLogout }>Logout</MenuItem>
       </NavDropdown>
     </Nav>
   </div>
